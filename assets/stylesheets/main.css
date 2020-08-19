@@ -9,7 +9,13 @@ h1 {
 #container {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex: auto;
+    background-color: #ff011f;
+    border-style: outset;
+    border-color: dimgray;
+    border-radius: 5px;
+    padding: 50px 50px 75px;
 }
 
 .box {
@@ -19,4 +25,8 @@ h1 {
     border-width: 2px;
     background-color: gray;
     margin: -6px -2px 0px 0px;
+}
+
+.filledBox {
+    background-color: black;
 }

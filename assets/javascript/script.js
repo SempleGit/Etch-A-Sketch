@@ -9,8 +9,15 @@ function createGrid(a = 16) {
         for (let col = 0; col < a; col++) {
             const box = document.createElement("div");
             box.classList.add("box");
+            box.addEventListener("mouseover", fillbox);
             rowDiv.appendChild(box);
         }
         container.appendChild(rowDiv);
+    }
+}
+
+function fillbox(e) {
+    if (!e.target.classList.contains("filledBox")) {
+        e.target.classList.add("filledBox");
     }
 }
