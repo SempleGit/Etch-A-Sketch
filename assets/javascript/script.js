@@ -1,6 +1,8 @@
 const container = document.querySelector("#container");
+const gridSize = 600;
+const a = prompt("Size of grid?")
 console.log(container);
-createGrid();
+createGrid(a);
 
 function createGrid(a = 16) {
     const mainGrid = document.createElement("div");
@@ -9,6 +11,8 @@ function createGrid(a = 16) {
         for (let col = 0; col < a; col++) {
             const box = document.createElement("div");
             box.classList.add("box");
+            box.style.width = gridSize / a + 'px';
+            box.style.height = gridSize / a + 'px';
             box.addEventListener("mouseover", fillbox);
             rowDiv.appendChild(box);
         }
