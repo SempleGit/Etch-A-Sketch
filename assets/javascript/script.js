@@ -37,7 +37,7 @@ function createGrid(a = 16) {
             box.style.width = gridSize / a + 'px';
             box.style.height = gridSize / a + 'px';
             box.addEventListener("mouseenter", fillbox);
-            box.addEventListener("ontouchmove", fillbox);
+            box.addEventListener("touchmove", fillbox);
             rowDiv.appendChild(box);
         }
         container.appendChild(rowDiv);
