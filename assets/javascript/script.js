@@ -1,6 +1,27 @@
+const buttonContainer = document.querySelector("#buttonContainer");
 const container = document.querySelector("#container");
 const gridSize = 600;
+let enableColor = false;
+addButtons();
 createGrid();
+
+function addButtons() {
+    const resetButton = document.createElement('button');
+    const enableColors = document.createElement('button');
+
+    enableColors.addEventListener('click', () => {
+        enableColor = !enableColor
+        alert(`Color changing: ${enableColor}`)});
+        
+    resetButton.addEventListener('click', clearGrid);
+
+    enableColors.textContent = 'Enable Color Change';
+    resetButton.textContent = 'Clear Grid';
+
+    buttonContainer.appendChild(resetButton);
+    buttonContainer.appendChild(enableColors);
+
+}
 
 function createGrid(a = 16) {
     const mainGrid = document.createElement("div");
@@ -29,7 +50,8 @@ function clearGrid() {
     }
     // const filledBoxes = document.querySelectorAll(".filledBox");
     // filledBoxes.forEach(box => box.classList.remove("filledBox"));
-    const a = prompt("Size of new grid?");
+    const input = prompt("Size of new grid?");
+    a = input > 128 ? 128 : input;
     createGrid(a);
 }
 
@@ -38,7 +60,7 @@ function fillbox(e) {
     if (!e.target.classList.contains("filledBox")) {
         e.target.classList.add("filledBox");
     }
-    if (this.count >= 3) {
+    if (enableColor && this.count >= 3) {
         e.target.style.backgroundColor = getRandomColor();
     }
 }
