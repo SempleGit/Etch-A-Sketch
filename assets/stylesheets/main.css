@@ -24,7 +24,9 @@ h1 {
     border-style: solid;
     border-width: 2px;
     background-color: gray;
-    margin: -6px -2px 0px 0px;
+    border-color: gray;
+    /* border-radius: 2px; */
+    /* margin: -2px; */
 }
 
 .filledBox {
