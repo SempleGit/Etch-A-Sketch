@@ -12,7 +12,7 @@ function createGrid(a = 16) {
             box.classList.add("box");
             box.style.width = gridSize / a + 'px';
             box.style.height = gridSize / a + 'px';
-            box.addEventListener("mouseover", fillbox);
+            box.addEventListener("mouseenter", fillbox);
             box.addEventListener("click", fillbox);
             rowDiv.appendChild(box);
         }
